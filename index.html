@@ -26,6 +26,31 @@
   
     <a href="add.html" class="btn btn-dark mb-3">Add New</a>
 
+<!-- Holding -->
+
+<?php
+        $sql = "SELECT * FROM `crud`";
+        $result = mysqli_query($conn, $sql);
+        while ($row = mysqli_fetch_assoc($result)) {
+        ?>
+          <tr>
+            <td><?php echo $row["id"] ?></td>
+            <td><?php echo $row["first_name"] ?></td>
+            <td><?php echo $row["last_name"] ?></td>
+            <td><?php echo $row["email"] ?></td>
+            <td><?php echo $row["gender"] ?></td>
+            <td>
+              <a href="edit.php?id=<?php echo $row["id"] ?>" class="link-dark"><i class="fa-solid fa-pen-to-square fs-5 me-3"></i></a>
+              <a href="delete.php?id=<?php echo $row["id"] ?>" class="link-dark"><i class="fa-solid fa-trash fs-5"></i></a>
+            </td>
+          </tr>
+        <?php
+        }
+        ?>
+
+<!-- Holding -->
+
+
     <table class="table table-hover text-center">
       <thead class="table-dark">
         <tr>
@@ -43,7 +68,12 @@
         <th scope="col">task</th>
         <th scope="col">pending</th>
         <th scope="col">12/21/25</th>
-        <td>
+        <!-- <td><?php echo $row["id"] ?></td>
+        <td><?php echo $row["title"] ?></td>
+        <td><?php echo $row["description"] ?></td>
+        <td><?php echo $row["status"] ?></td>
+        <td> -->
+          <td>
             <a href="update.html" class="link-dark"><i class="fa-solid fa-pen-to-square fs-5 me-3"></i></a>
             <a href="delete.php" class="link-dark"><i class="fa-solid fa-trash fs-5"></i></a>
           </td>
