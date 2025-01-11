@@ -34,11 +34,6 @@ foreach ($queries as $query) {
     }
 
 }
-
 echo "Database updated successfully!";
-
 $conn->close();
-
-
-
 ?> 
