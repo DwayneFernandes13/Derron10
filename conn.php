@@ -13,7 +13,6 @@ echo "Connected successfully";
 ?>
 
 <?php
-
 // Read SQL queries from your .sql file
 
 $sql_file = fopen("projectdatabase.sql", "r");
@@ -21,8 +20,6 @@ $sql_file = fopen("projectdatabase.sql", "r");
 $sql_content = fread($sql_file, filesize("projectdatabase.sql"));
 
 fclose($sql_file);
-
-
 
 // Execute each SQL query
 
@@ -38,11 +35,7 @@ foreach ($queries as $query) {
 
 }
 
-
-
 echo "Database updated successfully!";
-
-
 
 $conn->close();
 
